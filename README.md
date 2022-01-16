@@ -6,5 +6,6 @@
 - https://nbailey.ca/post/wan-speedtest-elasticsearch/
 
 ## 注意点
-- kibanaの時刻設定をbrowserからAsia/Tokyoにしておくこと
+- localhost:9200でelasticsearchを動かしておく。
+- kibanaの時刻設定をbrowserからAsia/Tokyoにしておく。
 - 数値がbps単位で大きいので、スクリプトフィールドで 1250000で割ってMbit/sにしてる。
