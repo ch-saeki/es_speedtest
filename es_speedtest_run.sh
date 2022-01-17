@@ -5,7 +5,7 @@ ELASTICSEARCH_URL="http://localhost:9200"
 #-----------
 
 # IPA CyberLab (Bunkyo, Japan)
-server=$(/usr/bin/speedtest-cli --list | grep "IPA CyberLab" | cut -d' ' -f1 | rev | cut -c 2- | rev)
+server=$(/usr/bin/speedtest-cli --list | grep -m 1 "Japan" | cut -d' ' -f1 | rev | cut -c 2- | rev)
 SPEEDTEST_OPTIONS="--server ${server}"
 
 epoch=$(/usr/bin/date '+%s')
