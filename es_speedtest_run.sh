@@ -1,12 +1,12 @@
 #!/bin/bash
 
-SPEEDTEST_OPTIONS=""
 ELASTICSEARCH_URL="http://localhost:9200"
 
 #-----------
 
-# アイドル状態解除のためpingする
-ping 192.168.2.1 -w 3 -i 0.2 >> /dev/null
+# IPA CyberLab (Bunkyo, Japan)
+server=$(/usr/bin/speedtest-cli --list | grep "IPA CyberLab" | cut -d' ' -f1 | rev | cut -c 2- | rev)
+SPEEDTEST_OPTIONS="--server ${server}"
 
 epoch=$(/usr/bin/date '+%s')
 datestr=$(/usr/bin/date -d @${epoch} '+%Y.%m.%d')
