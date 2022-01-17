@@ -1,12 +1,17 @@
 #!/bin/bash
+set -e
 
 ELASTICSEARCH_URL="http://localhost:9200"
+SPEEDTEST_OPTIONS=""
 
 #-----------
 
-# IPA CyberLab (Bunkyo, Japan)
-server=$(/usr/bin/speedtest-cli --list | grep -m 1 "Japan" | cut -d' ' -f1 | rev | cut -c 2- | rev)
-SPEEDTEST_OPTIONS="--server ${server}"
+# select Japan server
+# SERVER=$(speedtest-cli --list | grep -m 1 -e "IPA CyberLab" -e "Rakuten" | cut -d' ' -f1 | rev | cut -c 2- | rev)
+# if [ "$SERVER" != "" ]; then
+#   SPEEDTEST_OPTIONS="--server ${SERVER}"
+#   echo "server is ${SERVER}"
+# fi
 
 epoch=$(/usr/bin/date '+%s')
 datestr=$(/usr/bin/date -d @${epoch} '+%Y.%m.%d')
